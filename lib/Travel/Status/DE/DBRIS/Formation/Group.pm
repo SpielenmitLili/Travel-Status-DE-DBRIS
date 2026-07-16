@@ -585,14 +585,18 @@ sub parse_model {
 			elsif ( $carriage->model == 429 or $carriage->model == 829 ) {
 				$ml{'429'}++;
 			}
-			elsif ( substr( $carriage->uic_id, 5, 4 ) eq '1430' or substr( $carriage->uic_id, 5, 4 ) eq '1830' ) {
-			    $ml{'1430'}++;
+			elsif (substr( $carriage->uic_id, 5, 4 ) eq '1430'
+				or substr( $carriage->uic_id, 5, 4 ) eq '1830' )
+			{
+				$ml{'1430'}++;
 			}
 			elsif ( $carriage->model == 430 or $carriage->model == 431 ) {
 				$ml{'430'}++;
 			}
-			elsif (substr( $carriage->uic_id, 5, 4 ) eq '1440' or substr( $carriage->uic_id, 5, 4 ) eq '1441' ) {
-			    $ml{'1440'}++;
+			elsif (substr( $carriage->uic_id, 5, 4 ) eq '1440'
+				or substr( $carriage->uic_id, 5, 4 ) eq '1441' )
+			{
+				$ml{'1440'}++;
 			}
 			elsif ($carriage->model == 440
 				or $carriage->model == 441
@@ -615,9 +619,9 @@ sub parse_model {
 			{
 				$ml{'463'}++;
 			}
-			elsif ($carriage->model == 464 ) {
-            	$ml{'464'}++;
-            }
+			elsif ( $carriage->model == 464 ) {
+				$ml{'464'}++;
+			}
 			elsif ( substr( $carriage->uic_id, 5, 4 ) =~ m{ 44 [56] [16] }x ) {
 				$ml{'445446'}++;
 			}
@@ -631,8 +635,8 @@ sub parse_model {
 				$ml{'475'}++;
 			}
 			elsif ( $carriage->model == 526 ) {
-            	$ml{'526'}++;
-            }
+				$ml{'526'}++;
+			}
 			elsif ( $carriage->model == 563 ) {
 				$ml{'563'}++;
 			}
