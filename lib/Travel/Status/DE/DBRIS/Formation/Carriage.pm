@@ -49,7 +49,7 @@ sub new {
 	$ref->{section}       = $json{platformPosition}{sector};
 	$ref->{type}          = $json{type}{constructionType};
 
-	if ( defined $ref->{uic_id} ) {
+	if ( defined $ref->{uic_id} and length( $ref->{uic_id} ) >= 12 ) {
 		$ref->{uic_id} =~ s{ ^ \d{11} \K - }{}x;
 		$ref->{country} = substr( $ref->{uic_id}, 2, 2 );
 	}
