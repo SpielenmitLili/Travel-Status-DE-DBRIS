@@ -231,9 +231,10 @@ my %ice_name = (
 	1520 => 'Gotha',
 	1521 => 'Homburg/Saar',
 	1522 => 'Torgau',
-	1807 => 'Nationalpark Schleswig-Holsteinisches Wattenmeer',
 	1523 => 'Hansestadt Greifswald',
 	1524 => 'Hansestadt Rostock',
+	1807 => 'Nationalpark Schleswig-Holsteinisches Wattenmeer',
+    1817 => 'Wetterau',
 	2853 => 'Nationalpark Sächsische Schweiz',
 	2865 => 'Remstal',
 	2868 => 'Nationalpark Niedersächsisches Wattenmeer',
@@ -270,6 +271,7 @@ my %ice_name = (
 	8020 => 'Amsterdam',
 	8022 => 'Waldecker Land',
 	8029 => 'Europa/Europe',
+	8052 => '#45 Halfway. Full Speed',
 	9006 => 'Martin Luther',
 	9009 => 'Cottbus/Chóśebuz',
 	9018 => 'Freistaat Bayern',
@@ -286,9 +288,12 @@ my %ice_name = (
 	9207 => 'Altenbeken',
 	9208 => 'Nationalpark Bayrischer Wald',
 	9212 => 'Braunschweig',
+	9216 => 'Ulm',
+	9218 => 'Ludwigslust',
 	9220 => 'Steiermark',
 	9223 => '75 Jahre Bundespolizei',
 	9229 => 'Zwickau',
+	9232 => 'Mannheim',
 	9234 => 'Ruhr',
 	9237 => 'Spree',
 	9457 => 'Bundesrepublik Deutschland',
@@ -340,6 +345,8 @@ my %model_name = (
 	'463'      => [ 'Mireo',               'BR 463' ],
 	'464'      => [ 'Mireo Smart',         'BR 464' ],
 	'475'      => [ 'TGV',                 'BR 475' ],
+	'501'      => [ 'SMILE',               'RABe 501' ],
+	'503'	   => [ 'Astoro',              'RABe 503' ],
 	'526'      => [ 'FLIRT Akku',          'BR 526' ],
 	'563'      => [ 'Mireo Plus B',        'BR 563' ],
 	'612'      => [ 'RegioSwinger',        'BR 612' ],
@@ -482,6 +489,8 @@ sub parse_model {
 		'463'      => 0,
 		'464'      => 0,
 		'475'      => 0,
+		'501'      => 0,
+		'503'      => 0,
 		'526'      => 0,
 		'563'      => 0,
 		'612'      => 0,
@@ -633,6 +642,12 @@ sub parse_model {
 			}
 			elsif ( $carriage->model == 475 ) {
 				$ml{'475'}++;
+			}
+			elsif ( $carriage->model == 501 ) {
+				$ml{'501'}++;
+			}
+			elsif ( $carriage->model == 503 or $carriage->model == 610 ) {
+				$ml{'503'}++;
 			}
 			elsif ( $carriage->model == 526 ) {
 				$ml{'526'}++;
