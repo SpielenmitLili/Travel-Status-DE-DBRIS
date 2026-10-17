@@ -290,6 +290,7 @@ my %ice_name = (
 	9206 => 'Dessau',
 	9207 => 'Altenbeken',
 	9208 => 'Nationalpark Bayrischer Wald',
+	9210 => 'Koblenz',
 	9212 => 'Braunschweig',
 	9216 => 'Ulm',
 	9217 => 'Hansestadt Rostock',
