@@ -604,16 +604,16 @@ sub parse_model {
 			elsif ( $carriage->model == 429 or $carriage->model == 829 ) {
 				$ml{'429'}++;
 			}
-			elsif (substr( $carriage->uic_id, 5, 4 ) eq '1430'
-				or substr( $carriage->uic_id, 5, 4 ) eq '1830' )
+			elsif (substr( $carriage->uic_id, 4, 4 ) eq '1430'
+				or substr( $carriage->uic_id, 4, 4 ) eq '1830' )
 			{
 				$ml{'1430'}++;
 			}
 			elsif ( $carriage->model == 430 or $carriage->model == 431 ) {
 				$ml{'430'}++;
 			}
-			elsif (substr( $carriage->uic_id, 5, 4 ) eq '1440'
-				or substr( $carriage->uic_id, 5, 4 ) eq '1441' )
+			elsif (substr( $carriage->uic_id, 4, 4 ) eq '1440'
+				or substr( $carriage->uic_id, 4, 4 ) eq '1441' )
 			{
 				$ml{'1440'}++;
 			}
