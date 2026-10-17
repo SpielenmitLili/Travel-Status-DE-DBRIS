@@ -531,7 +531,7 @@ sub parse_model {
 			if (   $carriage->model == 91
 				or $carriage->model == 491
 				or $carriage->model == 791
-				or $carriage->model == 891 )
+				or $carriage->uic_id, 4, 4 ) eq '2891' )
 			{
 				$ml{'091'}++;
 			}
