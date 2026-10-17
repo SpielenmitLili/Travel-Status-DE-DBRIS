@@ -719,7 +719,7 @@ sub parse_model {
 		}
 		# Schweiz
 		elsif ( $carriage->country == 85 ) {
-			elsif ( $carriage->model == 501 ) {
+			if ( $carriage->model == 501 ) {
         		$ml{'501'}++;
         	}
         	elsif ( $carriage->model == 503 or $carriage->model == 610 ) {
