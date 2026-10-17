@@ -653,12 +653,6 @@ sub parse_model {
 			elsif ( $carriage->model == 475 ) {
 				$ml{'475'}++;
 			}
-			elsif ( $carriage->model == 501 ) {
-				$ml{'501'}++;
-			}
-			elsif ( $carriage->model == 503 or $carriage->model == 610 ) {
-				$ml{'503'}++;
-			}
 			elsif ( $carriage->model == 526 ) {
 				$ml{'526'}++;
 			}
@@ -711,15 +705,26 @@ sub parse_model {
 				$ml{'IC2.TWIN'}++;
 			}
 		}
+		# Österreich
 		elsif ( $carriage->country == 81 ) {
 			if ( substr( $carriage->uic_id, 4, 4 ) eq '4011' ) {
 				$ml{'011'}++;
 			}
 		}
+		# Luxemburg
 		elsif ( $carriage->country == 82 ) {
 			if ( $carriage->model == 23 ) {
 				$ml{'023'}++;
 			}
+		}
+		# Schweiz
+		elsif ( $carriage->country == 85 ) {
+			elsif ( $carriage->model == 501 ) {
+        		$ml{'501'}++;
+        	}
+        	elsif ( $carriage->model == 503 or $carriage->model == 610 ) {
+        		$ml{'503'}++;
+        	}
 		}
 	}
 
