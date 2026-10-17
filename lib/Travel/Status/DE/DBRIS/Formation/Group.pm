@@ -321,7 +321,7 @@ my %ice_name = (
 my %model_name = (
 	'011'      => [ 'ICE T',    'ÖBB 4011' ],
 	'023'      => [ 'CFL KISS', 'CFL 2300' ],
-	'091'      => ['ICE L'],
+	'8091'     => ['ICE L'],
 	'401'      => [ 'ICE 1',        'BR 401' ],
 	'402'      => [ 'ICE 2',        'BR 402' ],
 	'403.S1'   => [ 'ICE 3',        'BR 403, 1. Serie' ],
@@ -466,7 +466,7 @@ sub parse_model {
 	my %ml = (
 		'011'      => 0,
 		'023'      => 0,
-		'091'      => 0,
+		'8091'     => 0,
 		'401'      => 0,
 		'402'      => 0,
 		'403.S1'   => 0,
@@ -528,12 +528,12 @@ sub parse_model {
 		}
 
 		if ( $carriage->country == 80 ) {
-			if (   $carriage->model == 91
-				or $carriage->model == 491
-				or $carriage->model == 791
+			if ( $carriage->uic_id, 4, 4 ) eq '8091'
+				or $carriage->uic_id, 4, 4 ) eq '8491'
+				or $carriage->uic_id, 4, 4 ) eq '1791'
 				or $carriage->uic_id, 4, 4 ) eq '2891' )
 			{
-				$ml{'091'}++;
+				$ml{'8091'}++;
 			}
 			elsif ( $carriage->model == 401
 				or ( $carriage->model >= 801 and $carriage->model <= 804 ) )
