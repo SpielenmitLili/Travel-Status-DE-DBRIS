@@ -321,6 +321,7 @@ my %ice_name = (
 my %model_name = (
 	'011'      => [ 'ICE T',    'ÖBB 4011' ],
 	'023'      => [ 'CFL KISS', 'CFL 2300' ],
+	'1990'     => [ 'ComfortJet' ],
 	'8091'     => ['ICE L'],
 	'401'      => [ 'ICE 1',        'BR 401' ],
 	'402'      => [ 'ICE 2',        'BR 402' ],
@@ -466,6 +467,7 @@ sub parse_model {
 	my %ml = (
 		'011'      => 0,
 		'023'      => 0,
+		'1990'     => 0,
 		'8091'     => 0,
 		'401'      => 0,
 		'402'      => 0,
@@ -725,6 +727,17 @@ sub parse_model {
         	elsif ( $carriage->model == 503 or $carriage->model == 610 ) {
         		$ml{'503'}++;
         	}
+		}
+		# Tschechische Republik
+		elsif ( $carriage->country == 54 ) {
+		    if ( $carriage->uic_id, 4, 4 ) eq '1990'
+            	or $carriage->uic_id, 4, 4 ) eq '2090'
+            	or $carriage->uic_id, 4, 4 ) eq '8090'
+            	or $carriage->uic_id, 4, 4 ) eq '8490'
+            	or $carriage->uic_id, 4, 4 ) eq '8590' )
+            {
+            	$ml{'1990'}++;
+            }
 		}
 	}
 
